@@ -266,6 +266,140 @@ You can see all code in there . And I have attached the code guide in this post.
 Then I used Power Bi to calculate the numbers using DAX and draw a visual chart. 
 Here is the DAX code snippet I used :
 
+```
+Đơn hàng trung bình
+Average_Oder_Value = DIVIDE([Total_Sales], [Total_Oder], 0)
+
+Biên lợi nhuận trung bình
+Average_Profit_Margin = 
+VAR TotalProfit = SUM(sales[Profit])
+VAR TotalSales = SUM(sales[Sales])
+RETURN DIVIDE(TotalProfit, TotalSales, 0)
+
+Doanh thu trung bình theo ngày
+Avg_Daily_Sales = 
+VAR TotalSales = SUM('sales'[Sales])
+VAR TotalDays = DISTINCTCOUNT('sales'[Order_Date])
+RETURN TotalSales / TotalDays
+
+Tốc độ tăng trưởng bình quân
+CAGR_Sales = 
+VAR StartYear = MIN('Order_Dates'[Year]) 
+VAR EndYear = MAX('Order_Dates'[Year]) 
+VAR StartSales = CALCULATE(SUM('sales'[Sales]), 'Order_Dates'[Year] = StartYear)
+VAR EndSales = CALCULATE(SUM('sales'[Sales]), 'Order_Dates'[Year] = EndYear)
+VAR NumYears = EndYear - StartYear
+RETURN 
+IF(NumYears > 0, 
+    (EndSales / StartSales) ^ (1 / NumYears) - 1, 
+    BLANK()
+)
+
+Số khách hàng mua lại
+Customers_MoreThanOnce = 
+VAR RepeatCustomers =
+    FILTER(
+        VALUES(sales[Customer_ID]),
+        CALCULATE(COUNT(sales[Order_ID])) > 1
+    )
+RETURN COUNTROWS(RepeatCustomers)
+
+
+Tỷ lệ biên lợi nhuận
+Profit_Margin = DIVIDE(SUM(sales[Profit]),SUM(sales[Net Sales]),0)*100
+
+Tỷ lệ khách hàng quay lại
+Repeat_customers = [Customers_MoreThanOnce]/[Total_customer]
+
+Tổng chi phí giá vốn
+Total_COGS = SUMX(
+    sales, 
+    (sales[Net Sales] - sales[Profit]
+))
+
+Tổng số khách hàng
+Total_customer = DISTINCTCOUNT(sales[Customer_ID])
+
+Tổng số đơn hàng
+Total_Oder = DISTINCTCOUNT(sales[Order_ID])
+
+Tổng số lợi nhuận
+Total_Profit = SUM(sales[Profit])
+
+Tổng doanh thu
+Total_Sales = SUM(sales[Sales])
+
+Tạo các bảng :
+
+Calendar = CALENDARAUTO()
+
+Category_SubCategory = SUMMARIZE(
+    sales,
+    sales[Category],
+    sales[Sub_Category]
+)
+
+City_Table = SUMMARIZE(
+    sales,
+    sales[City],
+    sales[State],
+    sales[Region]
+)
+
+Customer_Table = SUMMARIZE(
+    sales,
+    sales[Customer_ID],
+    sales[Customer_Name],
+    sales[Segment],
+    sales[Region]
+)
+
+Order_Dates = 
+ADDCOLUMNS(
+    DISTINCT(SELECTCOLUMNS('Sales', "Order Date", 'sales'[Order_Date])),
+    "Year", YEAR([Order Date]),
+    "Month", MONTH([Order Date]),
+    "Month Name", FORMAT([Order Date], "MMMM"),
+    "Day", DAY([Order Date]),
+     "Weekday", FORMAT([Order Date], "ddd")
+)
+Orders_Summary = SUMMARIZE(
+    sales,
+    sales[Order_ID],
+    sales[Order_Date],
+    sales[Customer_ID],
+    sales[Customer_Name],
+    sales[Product_ID],
+    sales[Product_Name],
+    sales[Category],
+    sales[Sub_Category],
+    sales[City],
+    sales[State],
+    sales[Region],
+    sales[Ship_Mode]
+)
+
+Product_Table = SUMMARIZE(
+    sales,
+    sales[Product_ID],
+    sales[Product_Name],
+    sales[Category],
+    sales[Sub_Category]
+)
+
+Region_Table = DISTINCT(sales[Region])
+
+Segment_Table = DISTINCT(sales[Segment])
+
+ShipMode_Table = DISTINCT(sales[Ship_Mode])
+```
+
+Data Modeling
+
+![image](https://github.com/user-attachments/assets/b9180741-f40b-43d7-a10e-547ae4f108f9)
+
+
+
 
 
 
