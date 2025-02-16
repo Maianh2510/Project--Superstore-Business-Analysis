@@ -263,3 +263,12 @@ Link colab here : https://colab.research.google.com/drive/1ueZE6A30ANo2Q2l9_uoTh
 
 You can see all code in there . And I have attached the code guide in this post.
 
+Then I used Power Bi to calculate the numbers using DAX and draw a visual chart. 
+Here is the DAX code snippet I used :
+
+
+
+
+
+
+
