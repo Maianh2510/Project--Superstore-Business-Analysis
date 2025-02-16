@@ -95,3 +95,73 @@ Let's take a look descriptive statistics
 
 ![image](https://github.com/user-attachments/assets/efaf07cf-c416-4a9f-9379-ba6b637acf07)
 
+**Data Cleaning**
+
+```
+Check duplicated
+df.duplicated()
+```
+
+```
+# convert columns to string
+columns_string = ['Customer_ID', 'Customer_Name','Postal_Code','Product_ID','Product_Name']
+df[columns_string] = df[columns_string].astype('string')
+```
+
+```
+#check again
+df[columns_string ].dtypes
+```
+
+```
+# check Ship_Mode, Segment,Country,City,State,Region,Category,Sub_Category
+df['Ship_Mode'].unique()
+df['Segment'].unique()
+df['Country'].unique()
+df['City'].unique()
+df['State'].unique()
+df['Region'].unique()
+df['Category'].unique()
+df['Sub_Category'].unique()
+```
+
+```
+# convert columns to category
+columns_category = ['Ship_Mode', 'Segment','Country','City','State','Region','Category','Sub_Category']
+df[columns_category] = df[columns_category].astype('category')
+```
+
+```
+# check again
+df[columns_category].dtypes
+```
+
+```
+# convert column date to datetime
+df['Order_Date'] = pd.to_datetime(df['Order_Date'])
+df['Order_Date'].head()
+df['Ship_Date'] = pd.to_datetime(df['Ship_Date'])
+df['Ship_Date'].head()
+```
+Check data infomation again
+
+![image](https://github.com/user-attachments/assets/4ca721d6-8e48-469f-b063-d75ff5e11eab)
+
+**Handling missing values**
+
+```
+# check null value
+df.isnull().sum()
+```
+
+```
+#Fill null value in column shipmode , country by  mode
+df['Ship_Mode'] = df['Ship_Mode'].fillna(df['Ship_Mode'].mode()[0])
+df['Country'] = df['Country'].fillna(df['Country'].mode()[0])
+```
+
+```
+# Recheck data
+df.info()
+```
+
