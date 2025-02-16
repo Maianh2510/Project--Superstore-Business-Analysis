@@ -65,4 +65,12 @@ To analyze the business data, I will pose the following five key questions:
 
 5️⃣ **Are there opportunities to expand into new markets or product categories?**  
 
+To answer these questions, I have taken the following approach:
 
+**Import all the needed libraries**
+```
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
