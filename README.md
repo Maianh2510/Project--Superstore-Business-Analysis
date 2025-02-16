@@ -38,7 +38,20 @@ The data includes 9,994 records with 21 columns, including important information
 | **Profit**      | Profit earned           |                 |                        |
 
 
+**Purpose**
 
+Analyze business data to improve operations to increase revenue and expand market.
+
+Key metrics to track include:
+
+Year-over-year sales and profits to assess growth rates.
+
+Best-selling products to optimize sales and promotional strategies.
+
+Identify:
+
+Customer growth trends to determine purchasing behavior and expand market.
+Forecast revenue for the next year
 
 
 
