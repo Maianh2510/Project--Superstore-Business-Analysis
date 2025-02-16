@@ -425,3 +425,31 @@ Home Office (16.41%) has the lowest revenue.
 All 3 customer files buy the most Office Supplies.
 Consumer has the highest average order value ($110.68)
 Corporate has an average spend of approximately the same as Consumer ($108.15), indicating that businesses are also willing to spend
+
+![image](https://github.com/user-attachments/assets/28b1bdcd-518c-4692-a65e-a436bbe9a025)
+
+The number of orders is high at the beginning of the week (Mon - Wed) and gradually decreases towards the end of the week (Sat - Sun).
+
+![image](https://github.com/user-attachments/assets/e4196fd1-a127-4114-896a-f52f2916f9f7)
+
+Standard Class is the most popular shipping method
+Accounting for nearly 37.65% of total orders, the highest of all shipping types.
+This can be considered the method suitable for most customers
+
+![image](https://github.com/user-attachments/assets/68ddc10b-a633-4efa-8099-d9c62e92970c)
+
+Red box (Eastern US):
+Concentrated sales, many states with large purchases.
+These may be strong current markets with large customer bases.
+Blue box (Western US):
+Few states with high sales, smaller bubble.
+Signs of potential expansion if exploited well.
+
+![image](https://github.com/user-attachments/assets/8443b44d-c0ca-42e0-9d7a-9003fe716d9f)
+
+Sales & Discounts (-0.089): Almost no correlation, meaning discounts do not have a significant impact on sales.
+Volume & Profit (0.18): Weak positive correlation, meaning selling more can increase profits, but not significantly.
+Discounts & Profit (-0.48): Strong negative correlation, discounts reduce profits due to their direct impact on profit margins.
+Discounts & Volume (0.011): Almost no correlation, indicating that customers do not respond strongly to discounts.
+
+Conclusion: Discounts do not increase sales but have a negative impact on profits.
