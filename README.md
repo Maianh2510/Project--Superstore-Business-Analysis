@@ -164,4 +164,102 @@ df['Country'] = df['Country'].fillna(df['Country'].mode()[0])
 # Recheck data
 df.info()
 ```
+![image](https://github.com/user-attachments/assets/e229e297-c2be-42b2-85ac-b55be36c989e)
+
+**Handling outliers**
+
+Check Outliers
+
+```
+plt.figure(figsize=(8,5))
+sns.boxplot(data=df[['Sales']])
+plt.title("Boxplot for Sales ")
+plt.show()
+```
+
+```
+plt.figure(figsize=(8,5))
+sns.boxplot(data=df[['Profit']])
+plt.title("Boxplot for Profit ")
+plt.show()
+````
+
+![image](https://github.com/user-attachments/assets/33989ecf-dd71-44c2-ad70-3f3ed74aa0c4)
+
+**Comment**
+Data Partitioning:
+With picture show scattered round points above and below the box. It mean both Sales and Profit variables have many outliers.
+
+Remove outliers
+
+```
+#Remove Outliers
+def rm_outliner(col_name):
+    Q1 = df[col_name].quantile(0.25)
+    Q3 = df[col_name].quantile(0.75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    df_result = df[(df[col_name] >= lower_bound) & (df[col_name] <= upper_bound)]
+    return df_result
+```
+
+```
+df = rm_outliner(col_name = 'Sales')
+df = rm_outliner(col_name = 'Profit')
+```
+
+```
+#Recheck
+df.describe()
+```
+
+**Correclations**
+
+```
+numberical_columns =  ['Sales','Quantity','Discount','Profit']
+numberical_columns
+```
+
+```
+coreclation_matrix = df[numberical_columns].corr()
+coreclation_matrix
+```
+
+```
+sns.heatmap(coreclation_matrix,annot=True, cmap='coolwarm')
+plt.title('sales correlation matrix')
+plt.show()
+```
+
+![image](https://github.com/user-attachments/assets/9c21f95d-7f22-42cd-a612-cfec705374cd)
+
+## Comments
+
+**Sales & Profit (0.4)**: Sales and Profit are positively correlated (0.4), meaning that when sales increase, profits also tend to increase, but the correlation is not very strong.
+
+**Sales & Quantity (0.11**): Sales and sales quantity are very weakly correlated (0.11), indicating that selling more products does not necessarily increase sales significantly.
+
+**Sales & Discount (-0.089)**: There is almost no significant correlation between sales and discounts, indicating that discounts do not have much impact on sales.
+
+**Quantity & Profit (0.18)**: Sales quantity and profits are weakly positively correlated, meaning that selling more products can increase profits, but not significantly.
+
+**Discount & Profit (-0.48)**: There is a clear negative correlation (-0.48), meaning that when prices are reduced, profits tend to decrease, which makes sense because discounts directly affect profit margins.
+
+**Discount & Quantity (0.011)**: There is almost no correlation between discounts and sales volume, which may be because customers do not respond strongly to discount programs.
+
+## Conclusion:
+*  Discounts do not have a positive impact on revenue but instead reduce profits.
+
+*   Increasing sales volume does not mean a strong increase in revenue.
+*   Discount policies need to be considered more carefully to avoid negative impacts on profits.
+
+```
+#Export the Csv file for visualization in Power BI
+df.to_csv("sales.csv", index=False)
+```
+
+Link colab here : https://colab.research.google.com/drive/1ueZE6A30ANo2Q2l9_uoThWB3-3CiZS05?usp=sharing
+
+You can see all code in there . And I have attached the code guide in this post.
 
