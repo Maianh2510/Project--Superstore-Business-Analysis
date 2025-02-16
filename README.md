@@ -74,3 +74,24 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 ```
+**Load the data**
+
+Let's take a look at the loaded data.
+Output 5 first rows:
+```
+df = pd.read_excel('/content/Superstore.xlsx')
+df.head()
+```
+![image](https://github.com/user-attachments/assets/04963d75-7a46-4ecd-ab87-681b5a6f5951)
+
+Let's take a look basic information about the dataset (columns, types, numbers of rows and not null values)
+
+```
+df.info()
+```
+![image](https://github.com/user-attachments/assets/09a7d0d8-69e8-4b37-972f-d7bed91ef897)
+
+Let's take a look descriptive statistics
+
+![image](https://github.com/user-attachments/assets/efaf07cf-c416-4a9f-9379-ba6b637acf07)
+
