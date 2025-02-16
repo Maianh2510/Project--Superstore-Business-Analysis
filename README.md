@@ -53,5 +53,16 @@ Identify:
 Customer growth trends to determine purchasing behavior and expand market.
 Forecast revenue for the next year
 
+To analyze the business data, I will pose the following five key questions:
+
+1️⃣ **How have revenue and profit grown over time?**  
+
+2️⃣ **Which products are the best-selling and most profitable?**  
+
+3️⃣ **What are the shopping behaviors of customers?**  
+
+4️⃣ **What is the projected revenue for next year based on current data?**  
+
+5️⃣ **Are there opportunities to expand into new markets or product categories?**  
 
 
