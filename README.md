@@ -1,6 +1,8 @@
 # Project--Superstore-Business-Analysis
 
-<img src="![3d-rendering-cartoon-shopping-cart]" width="300"/>
+![3827467](https://github.com/user-attachments/assets/927bd9ec-a755-4603-8f12-5eccb32e5fbb)
+
+
 
 
 
