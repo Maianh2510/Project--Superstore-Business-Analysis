@@ -38,7 +38,7 @@ The data includes 9,994 records with 21 columns, including important information
 | **Profit**      | Profit earned           |                 |                        |
 
 
-**Purpose**
+## Purpose
 
 Analyze business data to improve operations to increase revenue and expand market.
 
@@ -52,6 +52,8 @@ Identify:
 
 Customer growth trends to determine purchasing behavior and expand market.
 Forecast revenue for the next year
+
+## Action
 
 To analyze the business data, I will pose the following five key questions:
 
@@ -469,4 +471,14 @@ Profit increases with revenue but is still low compared to revenue.
 
 Discounts do not increase sales but negatively affect profits.
 
-# 
+# Propose
+
+Boost advertising before peak seasons to maximize revenue.
+
+Run promotions on low-traffic days and weekends to attract customers.
+
+Implement loyalty programs with rewards, discounts, and VIP benefits.
+
+Expand to the Western US market with targeted marketing and local partnerships.
+
+Use data analytics to personalize sales strategies and optimize pricing.
