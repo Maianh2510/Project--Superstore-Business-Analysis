@@ -448,8 +448,25 @@ Signs of potential expansion if exploited well.
 ![image](https://github.com/user-attachments/assets/8443b44d-c0ca-42e0-9d7a-9003fe716d9f)
 
 Sales & Discounts (-0.089): Almost no correlation, meaning discounts do not have a significant impact on sales.
+
 Volume & Profit (0.18): Weak positive correlation, meaning selling more can increase profits, but not significantly.
+
 Discounts & Profit (-0.48): Strong negative correlation, discounts reduce profits due to their direct impact on profit margins.
+
 Discounts & Volume (0.011): Almost no correlation, indicating that customers do not respond strongly to discounts.
 
 Conclusion: Discounts do not increase sales but have a negative impact on profits.
+
+# Conclusion
+
+Revenue tends to be seasonal and hourly. Peak season is the last months of the year especially September and November. Peak hours are early in the week (Mon - Wed) and decline towards the end of the week (Sat - Sun).
+
+Office Supplies: The product category with the highest revenue.
+
+Consumer is the customer group that contributes the most to revenue and has the highest average order value.
+
+Profit increases with revenue but is still low compared to revenue.
+
+Discounts do not increase sales but negatively affect profits.
+
+# 
