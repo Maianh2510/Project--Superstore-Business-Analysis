@@ -387,12 +387,41 @@ Data Modeling
 
 ![image](https://github.com/user-attachments/assets/c71be1a3-df9e-46c0-ab36-0e1b7b11514c)
 
+# INSIGHT
 
+# KEY METRIC
 
+![image](https://github.com/user-attachments/assets/66524bbe-745c-4c15-9f7d-044b66c4fe34)
 
+Between 2011 and 2014, the supermarket saw significant growth, averaging 6.19% annually. Key milestones include 789 customers and 4,281 orders, with a remarkable customer return rate of 98.99% and an average profit margin of 15.46%.
 
+![image](https://github.com/user-attachments/assets/0c6d2bba-37a2-4848-a67a-b7dafff1a3cf)
 
+Revenue generally increases over time but varies monthly.
 
+Peak season: September and November see the highest revenue, likely driven by year-end shopping demand (Black Friday, Christmas).
 
+Low season: February experiences significantly lower revenue, potentially due to:
 
+The aftermath of year-end spending from various promotions
+The lack of major shopping events
+February's shorter duration of 28-29 days
+Consumers saving for tax season.
 
+![image](https://github.com/user-attachments/assets/0bc69e79-d91d-471d-b194-86e95adc6b8a)
+
+Furniture: Stable revenue with low profits due to high costs.
+Office Supplies: Highest revenue and strong growth, but low profits.
+Technology: Stable revenue, lower than office supplies, with low profits.
+
+![image](https://github.com/user-attachments/assets/63cfdece-307b-47de-846d-949bf7f4c215)
+
+Consumer (53.34%) is the customer group that contributes the most to revenue.
+Corporate (30.24%) has a relatively high revenue.
+Home Office (16.41%) has the lowest revenue.
+
+![image](https://github.com/user-attachments/assets/ab2dc8d4-6cee-4950-a555-87720a17c2e9)
+
+All 3 customer files buy the most Office Supplies.
+Consumer has the highest average order value ($110.68)
+Corporate has an average spend of approximately the same as Consumer ($108.15), indicating that businesses are also willing to spend
