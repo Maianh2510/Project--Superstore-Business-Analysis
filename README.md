@@ -267,22 +267,19 @@ Then I used Power Bi to calculate the numbers using DAX and draw a visual chart.
 Here is the DAX code snippet I used :
 
 ```
-Đơn hàng trung bình
+Average Order Value
 Average_Oder_Value = DIVIDE([Total_Sales], [Total_Oder], 0)
-
-Biên lợi nhuận trung bình
+Average Profit Margin
 Average_Profit_Margin = 
 VAR TotalProfit = SUM(sales[Profit])
 VAR TotalSales = SUM(sales[Sales])
 RETURN DIVIDE(TotalProfit, TotalSales, 0)
-
-Doanh thu trung bình theo ngày
+Average Daily Sales
 Avg_Daily_Sales = 
 VAR TotalSales = SUM('sales'[Sales])
 VAR TotalDays = DISTINCTCOUNT('sales'[Order_Date])
 RETURN TotalSales / TotalDays
-
-Tốc độ tăng trưởng bình quân
+Compound Annual Growth Rate (CAGR)
 CAGR_Sales = 
 VAR StartYear = MIN('Order_Dates'[Year]) 
 VAR EndYear = MAX('Order_Dates'[Year]) 
@@ -294,8 +291,7 @@ IF(NumYears > 0,
     (EndSales / StartSales) ^ (1 / NumYears) - 1, 
     BLANK()
 )
-
-Số khách hàng mua lại
+Number of Returning Customers
 Customers_MoreThanOnce = 
 VAR RepeatCustomers =
     FILTER(
@@ -303,49 +299,41 @@ VAR RepeatCustomers =
         CALCULATE(COUNT(sales[Order_ID])) > 1
     )
 RETURN COUNTROWS(RepeatCustomers)
-
-
-Tỷ lệ biên lợi nhuận
-Profit_Margin = DIVIDE(SUM(sales[Profit]),SUM(sales[Net Sales]),0)*100
-
-Tỷ lệ khách hàng quay lại
-Repeat_customers = [Customers_MoreThanOnce]/[Total_customer]
-
-Tổng chi phí giá vốn
+Profit Margin
+Profit_Margin = DIVIDE(SUM(sales[Profit]), SUM(sales[Net Sales]), 0) * 100
+Repeat Customer Rate
+Repeat_customers = [Customers_MoreThanOnce] / [Total_customer]
+Total Cost of Goods Sold (COGS)
 Total_COGS = SUMX(
     sales, 
-    (sales[Net Sales] - sales[Profit]
-))
-
-Tổng số khách hàng
+    (sales[Net Sales] - sales[Profit])
+)
+Total Customers
 Total_customer = DISTINCTCOUNT(sales[Customer_ID])
-
-Tổng số đơn hàng
+Total Orders
 Total_Oder = DISTINCTCOUNT(sales[Order_ID])
-
-Tổng số lợi nhuận
+Total Profit
 Total_Profit = SUM(sales[Profit])
-
-Tổng doanh thu
+Total Sales
 Total_Sales = SUM(sales[Sales])
-
-Tạo các bảng :
-
+________________________________________
+Creating Tables
+Calendar Table
 Calendar = CALENDARAUTO()
-
+Category & Sub-Category Table
 Category_SubCategory = SUMMARIZE(
     sales,
     sales[Category],
     sales[Sub_Category]
 )
-
+City Table
 City_Table = SUMMARIZE(
     sales,
     sales[City],
     sales[State],
     sales[Region]
 )
-
+Customer Table
 Customer_Table = SUMMARIZE(
     sales,
     sales[Customer_ID],
@@ -353,7 +341,7 @@ Customer_Table = SUMMARIZE(
     sales[Segment],
     sales[Region]
 )
-
+Order Dates Table
 Order_Dates = 
 ADDCOLUMNS(
     DISTINCT(SELECTCOLUMNS('Sales', "Order Date", 'sales'[Order_Date])),
@@ -361,8 +349,9 @@ ADDCOLUMNS(
     "Month", MONTH([Order Date]),
     "Month Name", FORMAT([Order Date], "MMMM"),
     "Day", DAY([Order Date]),
-     "Weekday", FORMAT([Order Date], "ddd")
+    "Weekday", FORMAT([Order Date], "ddd")
 )
+Orders Summary Table
 Orders_Summary = SUMMARIZE(
     sales,
     sales[Order_ID],
@@ -378,7 +367,7 @@ Orders_Summary = SUMMARIZE(
     sales[Region],
     sales[Ship_Mode]
 )
-
+Product Table
 Product_Table = SUMMARIZE(
     sales,
     sales[Product_ID],
@@ -386,17 +375,18 @@ Product_Table = SUMMARIZE(
     sales[Category],
     sales[Sub_Category]
 )
-
+Region Table
 Region_Table = DISTINCT(sales[Region])
-
+Segment Table
 Segment_Table = DISTINCT(sales[Segment])
-
+Ship Mode Table
 ShipMode_Table = DISTINCT(sales[Ship_Mode])
 ```
 
 Data Modeling
 
-![image](https://github.com/user-attachments/assets/b9180741-f40b-43d7-a10e-547ae4f108f9)
+![image](https://github.com/user-attachments/assets/c71be1a3-df9e-46c0-ab36-0e1b7b11514c)
+
 
 
 
