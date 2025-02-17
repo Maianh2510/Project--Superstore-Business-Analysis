@@ -389,7 +389,10 @@ Data Modeling
 
 ![image](https://github.com/user-attachments/assets/c71be1a3-df9e-46c0-ab36-0e1b7b11514c)
 
-# INSIGHT
+You can see the detailed visual charts here.
+Link Power BI : https://drive.google.com/file/d/1lyQsyhYWXTF8ULjwmEz9udyZ90OB-gYP/view?usp=sharing
+
+# REPORT ANALYSIS
 
 # KEY METRIC
 
