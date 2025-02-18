@@ -420,6 +420,15 @@ Furniture: Stable revenue with low profits due to high costs.
 Office Supplies: Highest revenue and strong growth, but low profits.
 Technology: Stable revenue, lower than office supplies, with low profits.
 
+![image](https://github.com/user-attachments/assets/371b7529-2ef3-4262-8984-c17369e94e95)
+
+While revenue and profit tend to increase. Profit margin shows significant fluctuations and tends to decrease from 2012-2014.
+
+![image](https://github.com/user-attachments/assets/fddbd098-316e-42bf-af16-24e8ef875c42)
+
+Cost of capital increases proportionally to revenue.
+Selling price fluctuates over time but is still much lower than cost of capital.
+2014 period. Costs increase but selling price does not increase much.
 ![image](https://github.com/user-attachments/assets/63cfdece-307b-47de-846d-949bf7f4c215)
 
 Consumer (53.34%) is the customer group that contributes the most to revenue.
